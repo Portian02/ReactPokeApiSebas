@@ -138,14 +138,18 @@
 
 @media screen and (min-width: 768px) {
   .container-pokemon {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .card-Pokemon {
   border: 2px var(--clr-black);
   border-radius: 1rem;
-  background-image: url("https://www.rpnation.com/gallery/just-a-pokeball-background.27961/full");
+  background-image:linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),url("https://www.rpnation.com/gallery/just-a-pokeball-background.27961/full");
   background-size: cover;
   /* background-repeat: no-repeat; */
   background-color: var(--cl-white);
@@ -192,8 +196,9 @@
   column-gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
-  text-decoration: none;
-  color: var(--clr-black);
+  align-items: center;
+
+  color: var(--cl-white);
 }
 .id-pokemon {
   background-color: var(--clr-gray);

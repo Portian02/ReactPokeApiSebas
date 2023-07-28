@@ -6,29 +6,19 @@ const getPokemonById = async (url) => {
     id,
     sprites,
     weight,
-    heigth,
+    game_indices,
     types,
-    hp,
-    attack,
-    defense,
-    speed,
-    specialAttack,
-    specialDefense,
+    stats,
   } = await response.json();
-
+  
   return {
     name,
     id,
     img: sprites.other["official-artwork"].front_default,
     weight,
-    heigth,
+    game_indices,
     types,
-    hp,
-    attack,
-    defense,
-    speed,
-    specialAttack,
-    specialDefense,
+    stats
     // type: Pokemons.
   };
 };
@@ -43,7 +33,6 @@ const getPokemons = async (
       return await getPokemonById(pokemon.url);
     })
   );
-
   return { next, previous, pokemons };
 };
 

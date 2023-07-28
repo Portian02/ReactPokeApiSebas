@@ -1,51 +1,36 @@
-
+import { Link } from "react-router-dom";
 
 const ProfileCard = ({ pokemons }) => {
-  const { name,
-    id,
-    sprites,
-    // weight,
-    // heigth,
-    types,
-    // hp,
-    // attack,
-    // defense,
-    // speed,
-    // specialAttack,
-    // specialDefense,
-  } = pokemons;
 
   return (
     <div className="profile-card">
-      <ul>
-        <li>
-          {" "}
-          <img
-            src={sprites.other["official-artwork"].front_default}
-            alt="Profile"
-            className=" profile-picture"
-          />
-          <div className="profile-details">
-            <h2>{name}</h2>
-            <p>Type: {types.map((type) => {
-                    return (
-                      <p key={id} className={type.type.name} id="type">
-                        {type.type.name}
-                      </p>
-                    );
-                  })}</p>
-            {/* <p>Weight:{weight}kg</p>
-            <p>Height:{heigth}cm</p>
-            <h3>Stats</h3>
-            <p>Hp:{hp}</p>
-            <p>Speed:{speed}</p>
-            <p>Attack:{attack}</p>
-            <p>Defense:{defense}</p>
-            <p>Special Attack:{specialAttack}</p>
-            <p>Special Defense:{specialDefense}</p> */}
+      {pokemons?.map((pokemon) => {
+        return (
+          <div key={pokemon.id} className="card-Pokemon">
+            {/* <p className="poke-id-back">#{pokemon.id}</p> */}
+            <div className="poke-imagen">
+              <Link to="/">
+                <img src={pokemon.img} alt={pokemon.name} />
+              </Link>
+            </div>
+            <div className="pokeInfo">
+              <div className="poke-name">
+                <p className="id-pokemon">#{pokemon.id}</p>{" "}
+                <h2 className="poke-names">{pokemon.name}</h2>
+              </div>
+              <div className="poke-tipos">
+                {pokemon?.types.map((item) => {
+                  return (
+                    <p key={pokemon.id} className={item.type.name} id="type">
+                      {item.type.name}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
           </div>
-        </li>
-      </ul>
+        );
+      })}
     </div>
   );
 };

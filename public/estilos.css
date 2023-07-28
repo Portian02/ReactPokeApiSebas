@@ -4,8 +4,13 @@
   --cl-white: #f7f7f7;
 }
 
+#root {
+  width: 100%;
+}
+
 .color {
-  background-image: url("back.jpg");
+  /* background-image: url("back.jpg"); */
+  padding: 0%;
 
   background-repeat: no-repeat;
   background-color: var(--clr-gray);
