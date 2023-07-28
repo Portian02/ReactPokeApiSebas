@@ -1,0 +1,12 @@
+:root {
+  --clr-black: #1c1c1c;
+  --clr-gray: #ececec;
+  --cl-white: #f7f7f7;
+}
+
+.color {
+  background-image: url("back.jpg");
+
+  background-repeat: no-repeat;
+  background-color: var(--clr-gray);
+}

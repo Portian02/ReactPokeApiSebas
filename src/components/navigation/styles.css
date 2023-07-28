@@ -1,0 +1,29 @@
+:root {
+  --type-figthing: #c03028;
+  --type-electric: #f8d030;
+  --cl-white: #f7f7f7;
+}
+
+nav {
+  background-color: var(--type-figthing);
+}
+
+img {
+  width: 50%;
+}
+
+.text {
+  text-decoration: none;
+  color: var(--type-electric);
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 1rem;
+}
+
+.text :hover {
+  color: var(--type-electric);
+}

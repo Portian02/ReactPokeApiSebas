@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rubik&display=swap");
+
+:root {
+  --clr-black: #1c1c1c;
+  --clr-gray: #ececec;
+  --cl-white: #f7f7f7;
+  /* /////////COLOR BY TYPES//////////////// */
+  --type-normal: #a8a878;
+  --type-fire: #f08030;
+  --type-water: #6890f0;
+  --type-grass: #78c850;
+  --type-electric: #f8d030;
+  --type-ice: #98d8d8;
+  --type-figthing: #c03028;
+  --type-poison: #a040a0;
+  --type-ground: #e0c068;
+  --type-flying: #a890f0;
+  --type-psychic: #f85888;
+  --type-bug: #a8b820;
+  --type-rock: #b8a038;
+  --type-ghost: #705898;
+  --type-dark: #705848;
+  --type-dragon: #7038f8;
+  --type-steel: #b8b8d0;
+  --type-fairy: #f0b6bc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--clr-black);
+  font-family: "Rubik", sans-serif;
+}
+
+/* //////////////////////////TYPES CLASSES///////////////////// */
+.normal {
+  background-color: var(--type-normal);
+  color: var(--clr-black);
+}
+
+.fire {
+  background-color: var(--type-fire);
+  color: var(--cl-white);
+}
+
+.water {
+  background-color: var(--type-water);
+  color: var(--cl-white);
+}
+
+.grass {
+  background-color: var(--type-grass);
+  color: var(--cl-white);
+}
+
+.electric {
+  background-color: var(--type-electric);
+  color: var(--cl-white);
+}
+
+.ice {
+  background-color: var(--type-ice);
+  color: var(--cl-white);
+}
+
+.fighting {
+  background-color: var(--type-figthing);
+  color: var(--cl-white);
+}
+
+.poison {
+  background-color: var(--type-poison);
+  color: var(--cl-white);
+}
+
+.ground {
+  background-color: var(--type-ground);
+  color: var(--cl-white);
+}
+
+.flying {
+  background-color: var(--type-flying);
+  color: var(--cl-white);
+}
+
+.psychic {
+  background-color: var(--type-psychic);
+  color: var(--cl-white);
+}
+
+.bug {
+  background-color: var(--type-bug);
+  color: var(--cl-white);
+}
+
+.rock {
+  background-color: var(--type-rock);
+  color: var(--cl-white);
+}
+
+.dark {
+  background-color: var(--type-dark);
+  color: var(--cl-white);
+}
+
+.ghost {
+  background-color: var(--type-ghost);
+  color: var(--cl-white);
+}
+
+.dragon {
+  background-color: var(--type-dragon);
+  color: var(--cl-white);
+}
+
+.steel {
+  background-color: var(--type-steel);
+  color: var(--cl-white);
+}
+
+.fairy {
+  background-color: var(--type-fairy);
+  color: var(--cl-white);
+}
+/* //////////////////////////TYPES CLASSES///////////////////// */
+
+.container-pokemon {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media screen and (min-width: 480px) {
+  .container-pokemon {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-pokemon {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card-Pokemon {
+  border: 2px var(--clr-black);
+  border-radius: 1rem;
+  background-image: url("https://www.rpnation.com/gallery/just-a-pokeball-background.27961/full");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-color: var(--cl-white);
+  box-shadow: 0 0 3rem -1rem grba(0, 0, 0, 0.25);
+  padding-block: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  isolation: isolate;
+}
+
+.poke-id-back {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--type-dark);
+  z-index: -1;
+}
+
+.poke-imagen {
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.poke-imagen img {
+  width: 100%;
+  max-width: 6rem;
+}
+
+.pokeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-inline: 1rem;
+  align-items: center;
+  text-align: center;
+}
+.poke-name {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--clr-black);
+}
+.id-pokemon {
+  background-color: var(--clr-gray);
+  padding: 0.25rem 0.5rem;
+  border-radius: 100vmax;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.poke-names {
+  font-size: 1.4rem;
+}
+
+#type {
+  padding: 0.25rem 0.5rem;
+  border-radius: 100vmax;
+}
+
+.poke-tipos {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: center;
+}
