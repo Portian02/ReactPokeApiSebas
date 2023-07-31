@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const ProfileCard = ({ pokemons }) => {
-
   return (
     <div className="profile-card">
       {pokemons?.map((pokemon) => {
