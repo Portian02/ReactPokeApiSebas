@@ -1,44 +1,43 @@
 import Navigation from "../../components/navigation";
-
 import { useState, useEffect } from "react";
-import ProfileCard from "../../components/cardList";
-import { getPokemons } from "../../Apis";
-import { useNavigate } from "react-router-dom";
-const Details = () => {
+import { getPokemonName } from "../../Apis";
+import { Link } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
+
+const Details = ({ pokemon }) => {
+  const [pokemons, setPokemons] = useState({});
+
+  let location = useLocation();
   let navigate = useNavigate();
-  const [pokemons, setPokemons] = useState([]);
+  let pokeId = useParams();
+  let idPokemon = pokeId.id;
+
+  const urlParamPokemon = async () => {
+    const pokemonsList = await getPokemonName(pokemons);
+    setPokemons(pokemonsList);
+  };
 
   useEffect(() => {
-    const Pokedex = async (id) => {
-      const pokemonsList = await getPokemons(
-        `https://pokeapi.co/api/v2/pokemon/${id}`
-      );
-      // console.log(pokemonsList);
-      setPokemons(pokemonsList.pokemons);
-    };
-
-    Pokedex();
+    urlParamPokemon();
   }, [pokemons]);
+
   const back = () => {
     navigate("/");
   };
-  // const [pokeInfo, setPokeInfo] = useState({});
-
-  // const loadPokeInfo = async () => {
-  //   const data = await getPokemons();
-  //   setPokeInfo(data);
-  // };
-
-  // useEffect(() => {
-  //   loadPokeInfo();
-  // }, []);
 
   return (
     <div>
       <Navigation />
       <h1 className="text">hola</h1>
-      <ProfileCard pokemons={pokemons} />
-
+      <div className="profile-card">
+        <Link to="/">
+          <img
+            src={pokemon.sprites.other["official-artwork"].front_default}
+            alt={pokemon.name}
+          />
+        </Link>
+        <h2>{pokemon.name}</h2>
+      </div>
       <center>
         <button onClick={back}>Back</button>
       </center>

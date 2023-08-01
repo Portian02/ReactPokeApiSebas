@@ -1,14 +1,20 @@
 import React from "react";
 import "./pag.css";
 
-const Pagination = () => {
+const Pagination = ({ page, total, backBtn, nextBtn }) => {
   return (
     <div>
       <center>
         <div className="btns">
-          <button className="back">Back</button>
-          <p> 1 de 65</p>
-          <button className="next">Next</button>
+          <button className="back" onClick={backBtn}>
+            Back
+          </button>
+          <p>
+            {page + 1} de {total}
+          </p>
+          <button className="next" onClick={nextBtn}>
+            Next
+          </button>
         </div>
       </center>
     </div>

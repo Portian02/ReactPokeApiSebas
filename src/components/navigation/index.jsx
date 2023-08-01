@@ -4,9 +4,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./styles.css";
 import Barsearch from "../search";
+
 // Funcion de navigation
 
-const Navigation = () => {
+const Navigation = ({ handleName, handlePokename }) => {
   return (
     <Navbar expand="lg">
       <Container className="colorR">
@@ -23,7 +24,7 @@ const Navigation = () => {
               <li className="text">
                 <Link to="/">
                   {" "}
-                  <p>Home</p>
+                  <p> Home</p>
                 </Link>{" "}
               </li>
 
@@ -35,7 +36,7 @@ const Navigation = () => {
               </li>
             </ul>
           </Nav>
-          <Barsearch />
+          <Barsearch handleName={handleName} handlePokename={handlePokename} />
         </Navbar.Collapse>
       </Container>
     </Navbar>

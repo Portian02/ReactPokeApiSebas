@@ -1,22 +1,7 @@
-import { useEffect, useState } from "react";
-import Btn from "../button";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { getPokemonName } from "../../Apis";
+import "./styles.css"
 
-const Barsearch = () => {
-  const [pokemon, setPokemon] = useState(null);
-  const [search, setSearch] = useState(" ");
-
-  const handleName = async (e) => {
-    e.preventDefault();
-    const name = await getPokemonName(search);
-    setPokemon(name);
-  };
-
-  const handlePokename = (e) => {
-    setSearch(e.tareget.value.toLowerCase().trim());
-  };
-
+const Barsearch = ({ handleName, handlePokename }) => {
   return (
     <div>
       <form className="form" onSubmit={handleName}>
@@ -24,14 +9,18 @@ const Barsearch = () => {
           <div>
             <input
               type="text"
-              value={search}
               onChange={handlePokename}
               className="form-control"
               placeholder="Buscar..."
             />
-
             <div>
-              <Btn />
+              <button type="submit" variant="warning" className="btn">
+                <img
+                  className="lupa"
+                  src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-gris.png"
+                  alt=""
+                />
+              </button>
             </div>
           </div>
         </div>
