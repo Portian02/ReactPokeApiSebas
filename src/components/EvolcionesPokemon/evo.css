@@ -7,6 +7,7 @@
 .info-evoluciones {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -27,7 +28,6 @@
 .poke-name-evos {
   display: flex;
   align-items: center;
-  gap: 1rem;
 
   justify-content: center;
   align-items: center;
@@ -35,4 +35,8 @@
 .poke-names-evo {
   font-size: 1.4rem;
   color: var(--cl-white);
+}
+
+.space {
+  padding: 1rem;
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "./cardPokemon.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import EvolucionesPokemon from "../EvolcionesPokemon";
 
 const DetailsPokemon = ({
   pokemon,
+  evoluciones,
   baby,
   evolution1,
   evoluiton2,
@@ -14,14 +15,41 @@ const DetailsPokemon = ({
   evolution2Id,
   babyName,
   evolution1Name,
-  evolution2Name
+  evolution2Name,
+  evolution3,
+  evolution3Id,
+  evolution3Name,
+  evolution4,
+  evolution4Id,
+  evolution4Name,
+  evolution5,
+  evolution5Id,
+  evolution5Name,
+  evolution6,
+  evolution6Id,
+  evolution6Name,
+  evolution7,
+  evolution7Id,
+  evolution7Name,
+  evolution8,
+  evolution8Id,
+  evolution8Name,
+  evolution9,
+  evolution9Id,
+  evolution9Name,
 }) => {
-  let navigate = useNavigate();
-  const back = () => {
+  const navigate = useNavigate();
+
+  const backBtn = (e) => {
+    e.preventDefault();
     navigate("/");
   };
+
   return (
     <div className="card-Pokemon-details">
+      <button className="info-btn" onClick={backBtn}>
+        <h1 className="text-btn">↩</h1>{" "}
+      </button>
       <div className="poke-imagen-card">
         {pokemon.sprites && (
           <img
@@ -65,7 +93,7 @@ const DetailsPokemon = ({
             striped
             variant="success"
             now={pokemon.stats?.[1]?.base_stat}
-            label={`${pokemon.stats?.[1]?.base_stat}%`}
+            label={`${pokemon.stats?.[1]?.base_stat}`}
           />{" "}
         </p>
         <p className="stats-data">
@@ -75,7 +103,7 @@ const DetailsPokemon = ({
             striped
             variant="info"
             now={pokemon.stats?.[5]?.base_stat}
-            label={`${pokemon.stats?.[5]?.base_stat}%`}
+            label={`${pokemon.stats?.[5]?.base_stat}`}
           />{" "}
         </p>
         <p className="stats-data">
@@ -85,7 +113,7 @@ const DetailsPokemon = ({
             striped
             variant="warning"
             now={pokemon.stats?.[2]?.base_stat}
-            label={`${pokemon.stats?.[2]?.base_stat}%`}
+            label={`${pokemon.stats?.[2]?.base_stat}`}
           />
         </p>
         <p className="stats-data">
@@ -95,12 +123,13 @@ const DetailsPokemon = ({
             striped
             variant="danger"
             now={pokemon.stats?.[0]?.base_stat}
-            label={`${pokemon.stats?.[0]?.base_stat}%`}
+            label={`${pokemon.stats?.[0]?.base_stat}`}
           />
         </p>
         <div className="evolutions-pokemon">
           <h1 className="evolution-data">Evoluciones:</h1>
           <EvolucionesPokemon
+            pokemons={evoluciones}
             baby={baby}
             evolution1={evolution1}
             evoluiton2={evoluiton2}
@@ -110,12 +139,30 @@ const DetailsPokemon = ({
             babyName={babyName}
             evolution1Name={evolution1Name}
             evolution2Name={evolution2Name}
+            evolution3={evolution3}
+            evolution3Id={evolution3Id}
+            evolution3Name={evolution3Name}
+            evolution4={evolution4}
+            evolution4Id={evolution4Id}
+            evolution4Name={evolution4Name}
+            evolution5={evolution5}
+            evolution5Id={evolution5Id}
+            evolution5Name={evolution5Name}
+            evolution6={evolution6}
+            evolution6Id={evolution6Id}
+            evolution6Name={evolution6Name}
+            evolution7={evolution7}
+            evolution7Id={evolution7Id}
+            evolution7Name={evolution7Name}
+            evolution8={evolution8}
+            evolution8Id={evolution8Id}
+            evolution8Name={evolution8Name}
+            evolution9={evolution9}
+            evolution9Id={evolution9Id}
+            evolution9Name={evolution9Name}
           />
         </div>
       </div>
-      <button className="info-btn" onClick={back}>
-        <h1 className="text-btn">↩</h1>{" "}
-      </button>
     </div>
   );
 };

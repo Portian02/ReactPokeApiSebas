@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 
-const Barsearch = ({ handleName, handlePokename }) => {
+const Barsearch = ({ handlePokename, handleName }) => {
   return (
     <div>
       <form className="form" onSubmit={handleName}>

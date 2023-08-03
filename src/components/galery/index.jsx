@@ -24,7 +24,7 @@ const PokedexList = ({ pokemons }) => {
               <div className="poke-tipos">
                 {pokemon?.types.map((item) => {
                   return (
-                    <p key={pokemon.id} className={item.type.name} id="type">
+                    <p key={item.id} className={item.type.name} id="type">
                       {item.type.name}
                     </p>
                   );

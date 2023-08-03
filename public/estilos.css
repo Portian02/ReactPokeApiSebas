@@ -9,9 +9,9 @@
 }
 
 .color {
-  /* background-image: url("back.jpg"); */
+  /* background-image: url("https://rare-gallery.com/thumbs/522899-polka-dots-pattern.jpg"); */
   padding: 0%;
-
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: var(--clr-gray);
 }

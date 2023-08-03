@@ -6,29 +6,35 @@ import "./main.css";
 import Pagination from "../../components/pagination";
 import { getPokemonName } from "../../Apis";
 import PokemonFound from "../../components/Results";
-
+import Swal from "sweetalert2";
 const Main = () => {
   const [pokemons, setPokemons] = useState([]);
-  const [page, setPage] = useState(0);
-  const [total, setTotal] = useState(0);
 
   ///Variables para el buscador////////
-  const [pokemon, setPokemon] = useState(null);
+  const [pokemon, setPokemon] = useState("");
   const [search, setSearch] = useState("");
   //
   /////////////Funciones Buscador///////////////
   const handleName = async (e) => {
     e.preventDefault();
-    const name = await getPokemonName(search);
-    setPokemon(name);
+    if (search === "") {
+      Swal.fire({
+        title: "Espacios en blanco",
+        text: "Por favor ingresa un nombre Pokemon",
+        imageUrl: "https://giffiles.alphacoders.com/401/4013.gif",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image",
+      });
+    } else {
+      const name = await getPokemonName(search);
+      setPokemon(name);
+    }
   };
 
   const handlePokename = (e) => {
-    e.preventDefault();
-    setSearch(e.target.value.toLowerCase().trim());
-    if (e.target.value.length===0) {
-      alert("hola")
-    }
+    console.log(e.target.value);
+    setSearch(e.target.value.trim());
   };
   /////////////Funciones Buscador///////////////
 
@@ -43,14 +49,26 @@ const Main = () => {
     setTotal(Math.ceil(pokemonsList.count / 20));
   };
   ///////////funciones btn pagination/////////////////
+  const [page, setPage] = useState(0);
+  const [total, setTotal] = useState(0);
+
   const backBtn = () => {
     setPage(Math.max(page - 1, 0));
   };
 
   const nextBtn = () => {
-    const pagina = page;
-
-    setPage(Math.min(pagina + 1, total));
+    if (page !== 64) {
+      setPage(Math.min(page + 1, total));
+    } else {
+      Swal.fire({
+        title: "llegaste al final ",
+        text: "No hay más Pokemon",
+        imageUrl: "https://media.tenor.com/bp0e59VWE2IAAAAC/pokemon.gif",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image",
+      });
+    }
   };
   ///////////funciones btn pagination/////////////////
 

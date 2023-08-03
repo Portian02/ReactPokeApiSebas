@@ -27,11 +27,11 @@ const getPokemons = async (limit = 20, offset = 0) => {
 //
 
 //////////REQUEST PARA CONSEGUIR LA EVOLUCIONES\\\\\\\\\\\\\\\\\
-const getPokeEvos = async (id, setImg, IdEvo) => {
+const getPokeEvos = async (id, Img, IdEvo) => {
   const pokeEvo = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const getPokes = await pokeEvo.json();
   IdEvo(getPokes.id);
-  setImg(getPokes.sprites.other["official-artwork"].front_default);
+  Img(getPokes.sprites.other["official-artwork"].front_default);
 };
 
 export { getPokemons, getPokemonName, getPokemonId, getPokeEvos };

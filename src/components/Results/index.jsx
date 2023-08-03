@@ -1,15 +1,18 @@
 import "./result.css";
 import { Link } from "react-router-dom";
 const PokemonFound = ({ name, types, image, id, type2 }) => {
+  
   const reload = () => {
     window.location.reload(false);
   };
-  console.log(type2);
+
   return (
     <div className="card-Pokemon-Info">
-      <button className="info-btn" onClick={reload}>
-        <h1 className="text-btn">↩</h1>{" "}
-      </button>
+      <Link className="link" to="/">
+        <button className="info-btn" onClick={reload}>
+          <h1 className="text-btn">↩</h1>{" "}
+        </button>
+      </Link>
       {/* <p className="poke-id-back">#{id}</p> */}
       <div className="poke-imagen-info">
         <Link to={`/details/${id}`}>

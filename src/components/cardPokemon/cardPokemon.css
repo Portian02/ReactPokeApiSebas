@@ -28,6 +28,9 @@
   margin-left: 40px;
 }
 
+.link {
+  text-decoration: none;
+}
 .poke-imagen-card img {
   width: 250px;
 }
@@ -111,8 +114,6 @@
 .evolutions-pokemon {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .evolution-data {
   color: var(--cl-white);
