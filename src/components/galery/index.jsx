@@ -8,7 +8,6 @@ const PokedexList = ({ pokemons }) => {
       {pokemons?.map((pokemon) => {
         return (
           <div key={pokemon.id} className="card-Pokemon">
-            {/* <p className="poke-id-back">#{pokemon.id}</p> */}
             <div className="poke-imagen">
               <Link to={`/details/${pokemon.id}`}>
                 <img

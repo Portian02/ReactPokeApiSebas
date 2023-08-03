@@ -1,0 +1,38 @@
+:root {
+  --clr-black: #1c1c1c;
+  --clr-gray: #ececec;
+  --cl-white: #f7f7f7;
+}
+
+.info-evoluciones {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .info-evoluciones {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 460px) {
+  .info-evoluciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.poke-name-evos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  justify-content: center;
+  align-items: center;
+}
+.poke-names-evo {
+  font-size: 1.4rem;
+  color: var(--cl-white);
+}

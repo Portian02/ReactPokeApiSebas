@@ -87,7 +87,7 @@
 .data {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   gap: 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
@@ -102,4 +102,19 @@
 }
 #btn_poke {
   overflow: hidden;
+}
+.title {
+  text-decoration: underline;
+  color: var(--cl-white);
+}
+
+.evolutions-pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.evolution-data {
+  color: var(--cl-white);
+  text-decoration: underline;
 }
