@@ -1,0 +1,105 @@
+.card-Pokemon-details {
+  margin: 40px;
+  padding: 2rem;
+  border: 2px var(--clr-black);
+  border-radius: 1rem;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("https://www.rpnation.com/gallery/just-a-pokeball-background.27961/full");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-color: var(--cl-white);
+  box-shadow: 0 0 3rem -1rem grba(0, 0, 0, 0.25);
+  padding-block: 1rem;
+
+  transition: 0.3s;
+  text-transform: uppercase;
+  position: relative;
+  isolation: isolate;
+}
+
+.poke-imagen-card {
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.poke-imagen-card img {
+  width: 250px;
+}
+
+.poke-imagen-card img:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+.poke-imagen-card img {
+  overflow: hidden;
+}
+
+.poke-name-card {
+  display: flex;
+  column-gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-left: 40px;
+  justify-content: center;
+  color: var(--cl-white);
+}
+
+.id-pokemon-card {
+  background-color: var(--clr-gray);
+  padding: 0.25rem 0.5rem;
+  border-radius: 100vmax;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.poke-names-card {
+  font-size: 1.4rem;
+}
+.stats {
+  margin: 30px;
+  color: var(--cl-white);
+}
+
+.stats-data {
+  color: var(--cl-white);
+}
+
+#type-card {
+  padding: 0.25rem 0.5rem;
+  border-radius: 100vmax;
+}
+
+.poke-tipos-card {
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.data-info {
+  color: var(--cl-white);
+}
+
+#btn_poke:hover .imagen {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+#btn_poke {
+  overflow: hidden;
+}

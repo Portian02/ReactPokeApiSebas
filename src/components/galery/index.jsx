@@ -10,7 +10,7 @@ const PokedexList = ({ pokemons }) => {
           <div key={pokemon.id} className="card-Pokemon">
             {/* <p className="poke-id-back">#{pokemon.id}</p> */}
             <div className="poke-imagen">
-              <Link to="/details/pokeId">
+              <Link to={`/details/${pokemon.id}`}>
                 <img
                   src={pokemon.sprites.other["official-artwork"].front_default}
                   alt={pokemon.name}

@@ -22,16 +22,9 @@ const Navigation = ({ handleName, handlePokename }) => {
           <Nav className="me-auto">
             <ul>
               <li className="text">
-                <Link to="/">
+                <Link className="pase" to="/">
                   {" "}
-                  <p> Home</p>
-                </Link>{" "}
-              </li>
-
-              <li className="text">
-                <Link to="/Perfil">
-                  {" "}
-                  <p>Perfil</p>
+                  <h3>Home</h3>
                 </Link>{" "}
               </li>
             </ul>

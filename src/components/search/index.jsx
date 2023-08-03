@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css"
+import "./styles.css";
 
 const Barsearch = ({ handleName, handlePokename }) => {
   return (
@@ -15,11 +15,7 @@ const Barsearch = ({ handleName, handlePokename }) => {
             />
             <div>
               <button type="submit" variant="warning" className="btn">
-                <img
-                  className="lupa"
-                  src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-gris.png"
-                  alt=""
-                />
+                <h2>🔍</h2>
               </button>
             </div>
           </div>

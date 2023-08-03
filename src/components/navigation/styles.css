@@ -13,10 +13,11 @@ img {
 }
 
 .text {
-  text-decoration: none;
   color: var(--type-electric);
 }
-
+.pase {
+  text-decoration: none;
+}
 ul {
   display: flex;
   flex-direction: row;

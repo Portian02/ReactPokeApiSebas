@@ -7,13 +7,13 @@ const Pagination = ({ page, total, backBtn, nextBtn }) => {
       <center>
         <div className="btns">
           <button className="back" onClick={backBtn}>
-            Back
+            ↩
           </button>
-          <p>
+          <h3>
             {page + 1} de {total}
-          </p>
+          </h3>
           <button className="next" onClick={nextBtn}>
-            Next
+            ↪
           </button>
         </div>
       </center>

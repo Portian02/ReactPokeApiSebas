@@ -24,7 +24,11 @@ const Main = () => {
   };
 
   const handlePokename = (e) => {
+    e.preventDefault();
     setSearch(e.target.value.toLowerCase().trim());
+    if (e.target.value.length===0) {
+      alert("hola")
+    }
   };
   /////////////Funciones Buscador///////////////
 
@@ -62,10 +66,14 @@ const Main = () => {
         <PokemonFound
           name={pokemon.name}
           id={pokemon.id}
-          image={pokemon.sprites.other["official-artwork"].front_default}
+          image={
+            pokemon.sprites &&
+            pokemon.sprites.other["official-artwork"].front_default
+          }
           weight={pokemon.weight}
           height={pokemon.height}
-          types={pokemon.types[0].type.name}
+          types={pokemon.types?.[0]?.type.name}
+          type2={pokemon.types?.[1]?.type.name}
         />
       ) : (
         <div className="container-card">
